@@ -12,58 +12,55 @@
 
 <body dir="rtl">
     <div class="main">
-        <div class="d-flex justify-content-center mb-5">
-            <a href="https://ibolak.com">
-              <img
+        
+
+        <form id="form-register" method="post">
+            <img 
                 src="images/1718807353-TCMlDRbPFbA1CHFG.svg"
                 width="240"
                 class="img-fluid"
-              />
-            </a>
-        </div>
-
-        <form id="form-register" method="post">
-
+            />
+    
             <div id="titr">
                 <h1 id="titrpp">مشخصات خود را کامل کنید:</h1>
             </div>
 
             <div id="fullnames">
-                <label for="fullname">نام کاربری</label><br>
-                <input type="text" id="fullname" name="fullname" placeholder="aliAsadi" title="فقط حروف مجاز است">
+                <label style="display: none;" for="fullname">نام و نام خانوادگی</label>
+                <input type="text" id="fullname" name="fullname" placeholder="نام و نام خانوادگی" title="فقط حروف مجاز است">
                 <span  id="fullnameError" class="error-massage"></span>
             </div>
 
 
-            <div id="nationalCodes">
+            <!-- <div id="nationalCodes">
                 <label for="nationalCode">کد ملی</label><br>
                 <input type="text" id="nationalCode" name="nationalCode" placeholder="**********"
                     title="لطفا یک کد ملی معتبر وارد کنید">
                 <span  id="nationalCodeError" class="error-massage"></span>
-            </div>
+            </div> -->
 
             <div id="email">
-                <label for="emaill">ایمیل</label><br>
-                <input type="text" id="emailuser" placeholder="name@example.com"
+                <label style="display: none;" for="emaill">ایمیل</label>
+                <input type="text" id="emailuser" placeholder="ایمیل"
                     title="لطفا ایمیل معتبر وارد کنید">
                 <span  id="emailError" class="error-massage"></span>
             </div>
 
 
             <div id="password">
-                <label for="passwordd">رمز عبور</label>
-                <input type="password" id="pass" placeholder="******"
+                <label style="display: none;" for="passwordd">رمز عبور</label>
+                <input type="password" id="pass" placeholder="رمز عبور"
                     title="لطفا یک رمز عبور معتبر وارد کنید.(شامل حرف بزرگ،کوچک،عدد و عبارات خاص(@#&) و از 8 یا بیشتر کرکتر باشد)">
                 <span  id="passwordError" class="error-massage"></span>
 
             </div>
 
-            <div id="password-forget">
+            <!-- <div id="password-forget">
                 <label for="password-reapet">شماره تلفن</label>
                 <input type="tel" id="phoneNumbers" placeholder="******"
                     title="لطفاً یک شماره تلفن معتبر (11 رقم که با 0 شروع می شود) وارد کنید">
                 <span  id="phoneNumbersError" class="error-massage"></span>
-            </div>
+            </div> -->
 
 
             <select id="educationLevel" name="educationLevel" >

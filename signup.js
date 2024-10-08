@@ -166,12 +166,5 @@ function validateRegisterForm(event) {
     isValid = false;
   }
 
-
-  if (isValid) {
-    window.location.href = "login.html";
-  }
-
-
-
   return isValid;
 }

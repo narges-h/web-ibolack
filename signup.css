@@ -63,8 +63,7 @@ body {
 
 .main {
     background-color: white;
-    width: 500px;
-    height: 1200px;
+    width: 400px;
     display: flex;
     flex-direction: row;
     padding: 50px;
@@ -84,8 +83,8 @@ body {
 }
 
 #titrpp {
-    color: rgb(16, 76, 215);
-    font-size: normal;
+    color: black;
+    font-size: large;
 }
 
 
@@ -96,55 +95,38 @@ body {
 #pass,
 #phoneNumbers {
     border: 1px solid rgb(232, 240, 254);
-    border-radius: 20px;
-    background-color: rgb(232, 240, 254);
+    border-radius: 10px;
+    background-color: rgb(234 237 243);
     padding: 15px;
-    width: 470px;
+    width: 365px;
     margin-top: 20px;
     margin-bottom: 10px;
 
 }
 
+#nationalCode:hover,
+#emailuser:hover,
+#fullname:hover,
 #pass:hover {
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
-}
-
-#fullname:hover {
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
-}
-
-#emailuser:hover {
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
-}
-
-#nationalCode:hover {
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
-}
-
-#emailuser:hover {
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
+    border: 1px solid rgba(230, 233, 236, 0.827);
+    background-color: rgb(234 237 243);
 }
 
 #educationLevel {
-    border: 1px solid rgb(232, 240, 254);
-    border-radius: 20px;
-    background-color: rgb(232, 240, 254);
+    border: 1px solid rgba(230, 233, 236, 0.827);
+    border-radius: 10px;
+    background-color: rgb(234 237 243);
     padding: 15px;
-    width: 500px;
+    width: 395px;
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: "IranSans";
 }
 
 option {
-    border: 1px solid rgb(232, 240, 254);
+    border: 1px solid rgba(230, 233, 236, 0.827);
     border-radius: 20px;
-    background-color: rgb(232, 240, 254);
+    background-color: rgb(234 237 243);
     padding: 15px;
     width: 500px;
     font-family: "IranSans";
@@ -156,22 +138,22 @@ option {
 
 #rememberMe:hover {
     cursor: pointer;
-    color: #007aff;
+    color: #009ef7;
 }
 
 
 
 #vorodhesab {
-    color: rgb(16, 76, 215);
+    color: #009ef7;
     text-decoration: none;
 }
 
 #sabtnam {
-    background-color: #286bb8;
-    border: 1px solid #286bb8;
+    background-color: #009ef7;
+    border: 1px solid #009ef7;
     border-radius: 10px;
     color: white;
-    height: 65px;
+    height: 50px;
     padding: 10px;
     text-align: center;
     margin-top: 20px;
@@ -180,7 +162,7 @@ option {
 
 #sabtnam:hover {
     cursor: pointer;
-    background-color: rgb(25, 60, 142);
+    /* background-color: rgb(25, 60, 142); */
 }
 
 #google {
@@ -202,7 +184,7 @@ option {
 
 
 #forget {
-    color: rgb(16, 76, 215);
+    color: #009ef7;
     padding-top: 20px;
     padding-bottom: 20px;
     text-decoration: none;
@@ -210,14 +192,11 @@ option {
 
 #forget:hover {
     cursor: pointer;
-    color: #007aff;
+    color: #009ef7;
 }
 
 img {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    padding-right: 10px;
+    margin: 0% auto;
 
 }
 
