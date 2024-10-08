@@ -11,36 +11,14 @@ inputFields.forEach(function (field) {
   });
 });
 
-function isValidNationalCode(nationalCode) {
-  if (/^[0-9]{10}$/.test(nationalCode)) { 
-    let sumCodemelliNumber = 0;
-    for (let i = 0; i < 9; i++) {
-      sumCodemelliNumber += parseInt(nationalCode[i]) * (10 - i);
-    }
-    let rem = sumCodemelliNumber % 11;
-    let lastNationalCodeDigit = parseInt(nationalCode[9]);
-    if ((rem > 1 && (11 - rem === lastNationalCodeDigit)) || (rem <= 1 && rem === lastNationalCodeDigit)) { 
-      return true;
-    } else {
-      return false;
-    }
-  } else { 
-    return false;
-  }
-}
-
 function findErrorMessage(fieldId) {
   switch (fieldId) {
     case 'fullname':
       return document.getElementById('fullnameError');
-    case 'nationalCode':
-      return document.getElementById('nationalCodeError');
     case 'emailuser':
       return document.getElementById('emailError');
     case 'pass':
       return document.getElementById('passwordError');
-    case 'phoneNumbers':
-      return document.getElementById('phoneNumbersError');
     case 'gender':
       return document.getElementById('genderError');
     default:
@@ -68,15 +46,17 @@ function validateRegisterForm(event) {
   errorMessages.forEach(function (message) {
     message.textContent = "";
   });
+
+
   if (fullname) {
     var fullnameValue = fullname.value.trim();
-    var fullnamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF]{3,}$/;
+    var fullnamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF\s]{3,}$/;
     if (!fullnamePattern.test(fullnameValue)) {
       fullname.classList.add("invalid");
       var existingErrorMessage = findErrorMessage(fullname);
       if (!existingErrorMessage) {
         var errorMessage = document.createElement('span');
-        errorMessage.textContent = 'لطفا یک نام کاربری مناسب وارد کنید';
+        errorMessage.textContent = 'لطفا  نام مناسب وارد کنید';
         errorMessage.style.color = "red";
         errorMessage.classList.add('error-message');
         fullname.parentElement.appendChild(errorMessage);
@@ -98,39 +78,6 @@ function validateRegisterForm(event) {
         errorMessage.style.color = "red";
         errorMessage.classList.add('error-message');
         password.parentElement.appendChild(errorMessage);
-      }
-      isValid = false;
-    }
-  }
-
-  if (nationalCode) {
-    var nationalCodeValue = nationalCode.value.trim();
-    if (!isValidNationalCode(nationalCodeValue)) {
-      nationalCode.classList.add("invalid");
-      var existingErrorMessage = findErrorMessage(nationalCode);
-      if (!existingErrorMessage) {
-        var errorMessage = document.createElement('span');
-        errorMessage.textContent = 'لطفا کد ملی معتبر وارد کنید';
-        errorMessage.style.color = "red";
-        errorMessage.classList.add('error-message');
-        nationalCode.parentElement.appendChild(errorMessage);
-      }
-      isValid = false;
-    }
-  }
-
-  if (phone) {
-    var phoneNumberValue = phone.value.trim();
-    var phoneNumberPattern = /^0\d{10}$/;
-    if (!phoneNumberPattern.test(phoneNumberValue)) {
-      phone.classList.add("invalid");
-      var existingErrorMessage = findErrorMessage(phone);
-      if (!existingErrorMessage) {
-        var errorMessage = document.createElement('span');
-        errorMessage.textContent = 'لطفا شماره تلفن معتبر وارد کنید';
-        errorMessage.style.color = "red";
-        errorMessage.classList.add('error-message');
-        phone.parentElement.appendChild(errorMessage);
       }
       isValid = false;
     }
@@ -165,6 +112,21 @@ function validateRegisterForm(event) {
     document.getElementById('genderError').appendChild(errorMessage);
     isValid = false;
   }
+
+ 
+  // if (educationSelect) {
+  //   var selectedValue = educationSelect.value;
+  //   var errorMessageElement = findErrorMessage('educationLevel');
+
+  //   if (!selectedValue) {
+  //       errorMessageElement.textContent = 'لطفا مدرک تحصیلی خود را انتخاب کنید';
+  //       educationSelect.classList.add('invalid');
+        
+  //       isValid = false;
+  //   }
+  // }
+  
+  
 
   return isValid;
 }
