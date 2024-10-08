@@ -10,27 +10,24 @@
     <div class="main">
         <form id="form-sign" onsubmit="validateLoginForm(event);">
 
+            <img 
+                src="../images/1718807353-TCMlDRbPFbA1CHFG.svg"
+                width="240"
+                class="img-fluid"
+            />
+
             <div id="titr">
-                <h1 id="titrpp">ورود به حساب کاربری</h1>
+                <h1 id="titrpp">ورود یا ثبت نام</h1>
             </div>
 
-            <div id="email">
-                <label for="emaill">ایمیل</label><br>
-                <input type="text" id="emailuser" placeholder="name@example.com">
-                <span  id="emailError" class="error-massage"></span>
+            <div id="password-forget">
+                <label style="display: none;" for="password-reapet">شماره تلفن</label>
+                <input type="tel" id="phoneNumbers" placeholder="لطفاً شماره موبایل خود را وارد نمایید">
+                <span  id="phoneNumbersError" class="error-massage"></span>
             </div>
-            <div id="password">
-                <label for="passwordd">رمز عبور</label>
-                <input type="password" id="pass" placeholder="******">
-                <span  id="passwordError" class="error-massage"></span>
-                
-            </div>
-
+         
             <button type="submit" name="submit" id="open">ورود</button>
 
-            <a id="forget" href="#">کلمه عبور خود را فراموش کرده اید؟</a>
-
-            <button name="button2" id="google"><a>ورود با گوگل</a><img src="p1.png" alt="google logo"></button>
             <p id="sabt">حساب کاربری ندارید؟<a href="signup.html" id="sabtnam">ثبت نام</a></p>
 
         </form>
@@ -40,3 +37,5 @@
 </body>
 
 </html>
+
+

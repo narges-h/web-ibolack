@@ -11,14 +11,32 @@ inputFields.forEach(function (field) {
   });
 });
 
+function isValidNationalCode(nationalCode) {
+  if (/^[0-9]{10}$/.test(nationalCode)) { 
+    let sumCodemelliNumber = 0;
+    for (let i = 0; i < 9; i++) {
+      sumCodemelliNumber += parseInt(nationalCode[i]) * (10 - i);
+    }
+    let rem = sumCodemelliNumber % 11;
+    let lastNationalCodeDigit = parseInt(nationalCode[9]);
+    if ((rem > 1 && (11 - rem === lastNationalCodeDigit)) || (rem <= 1 && rem === lastNationalCodeDigit)) { 
+      return true;
+    } else {
+      return false;
+    }
+  } else { 
+    return false;
+  }
+}
+
 function findErrorMessage(fieldId) {
   switch (fieldId) {
     case 'fullname':
       return document.getElementById('fullnameError');
-    case 'emailuser':
-      return document.getElementById('emailError');
     case 'pass':
       return document.getElementById('passwordError');
+    case 'phoneNumbers':
+      return document.getElementById('phoneNumbersError');
     case 'gender':
       return document.getElementById('genderError');
     default:
@@ -33,9 +51,7 @@ function validateRegisterForm(event) {
 
   var fullname = document.getElementById('fullname');
   var password = document.getElementById('pass');
-  var nationalCode = document.getElementById('nationalCode');
   var phone = document.getElementById('phoneNumbers');
-  var email = document.getElementById('emailuser');
   var isValid = true;
 
   var inputFields = document.querySelectorAll("#form-register input");
@@ -46,17 +62,15 @@ function validateRegisterForm(event) {
   errorMessages.forEach(function (message) {
     message.textContent = "";
   });
-
-
   if (fullname) {
     var fullnameValue = fullname.value.trim();
-    var fullnamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF\s]{3,}$/;
+    var fullnamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF]{3,}$/;
     if (!fullnamePattern.test(fullnameValue)) {
       fullname.classList.add("invalid");
       var existingErrorMessage = findErrorMessage(fullname);
       if (!existingErrorMessage) {
         var errorMessage = document.createElement('span');
-        errorMessage.textContent = 'لطفا  نام مناسب وارد کنید';
+        errorMessage.textContent = 'لطفا یک نام کاربری مناسب وارد کنید';
         errorMessage.style.color = "red";
         errorMessage.classList.add('error-message');
         fullname.parentElement.appendChild(errorMessage);
@@ -83,23 +97,24 @@ function validateRegisterForm(event) {
     }
   }
 
-  if (email) {
-    var emailValue = email.value.trim();
-    var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-    
-    if (!emailPattern.test(emailValue)) {
-      email.classList.add("invalid");
-      var existingErrorMessage = findErrorMessage(email);
+
+  if (phone) {
+    var phoneNumberValue = phone.value.trim();
+    var phoneNumberPattern = /^0\d{10}$/;
+    if (!phoneNumberPattern.test(phoneNumberValue)) {
+      phone.classList.add("invalid");
+      var existingErrorMessage = findErrorMessage(phone);
       if (!existingErrorMessage) {
         var errorMessage = document.createElement('span');
-        errorMessage.textContent = 'لطفا یک ایمیل معتبر وارد کنید';
+        errorMessage.textContent = 'لطفا شماره تلفن معتبر وارد کنید';
         errorMessage.style.color = "red";
         errorMessage.classList.add('error-message');
-        email.parentElement.appendChild(errorMessage);
+        phone.parentElement.appendChild(errorMessage);
       }
       isValid = false;
     }
   }
+
 
   var genderOptions = document.querySelectorAll('#form-register input[name="gender"]');
   var isGenderSelected = Array.from(genderOptions).some(option => option.checked);
@@ -113,20 +128,12 @@ function validateRegisterForm(event) {
     isValid = false;
   }
 
- 
-  // if (educationSelect) {
-  //   var selectedValue = educationSelect.value;
-  //   var errorMessageElement = findErrorMessage('educationLevel');
 
-  //   if (!selectedValue) {
-  //       errorMessageElement.textContent = 'لطفا مدرک تحصیلی خود را انتخاب کنید';
-  //       educationSelect.classList.add('invalid');
-        
-  //       isValid = false;
-  //   }
-  // }
-  
-  
+  if (isValid) {
+    window.location.href = "login.html";
+  }
+
+
 
   return isValid;
 }

@@ -167,8 +167,8 @@ body {
 
 #fullname,
 #emailuser,
-#emailuser,
-#pass {
+#pass,
+#phoneNumbers {
     border: 1px solid rgb(232, 240, 254);
     border-radius: 10px;
     background-color: rgb(245 245 245 / 83%);;
@@ -179,8 +179,9 @@ body {
 
 }
 
-#emailuser:hover,
+
 #fullname:hover,
+#phoneNumbers:hover,
 #pass:hover {
     border: 1px solid rgba(215, 231, 247, 0.827);
     background-color: rgb(245 245 245 / 83%);;
