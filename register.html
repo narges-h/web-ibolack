@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="register.css" />
+  </head>
+  <body>
+    <div class="login-column">
+      <div class="d-flex justify-content-center mb-5">
+        <a href="https://ibolak.com">
+          <img
+            src="https://ibolak.com/storage/image/2024/6/1718807353-TCMlDRbPFbA1CHFG.svg"
+            width="240"
+            class="img-fluid"
+          />
+        </a>
+      </div>
+
+      <div class="d-block" data-kt-password-meter="true">
+        <h2 class="mb-0 text-right">مشخصات خود را کامل کنید:</h2>
+        <div class="input-wrapper mb-4">
+          <input
+            class="form-control form-control-lg form-control-solid mt-4"
+            autocomplete="off"
+            placeholder="نام"
+            type="text"
+            required=""
+            dir="rtl"
+            name="firstname"
+          />
+          <input
+            class="form-control form-control-lg form-control-solid mt-4"
+            autocomplete="off"
+            placeholder="نام خانوادگی"
+            type="text"
+            dir="rtl"
+            required=""
+            name="lastname"
+          />
+
+          <!--begin::Main wrapper-->
+          <div class="fv-row" data-kt-password-meter="true">
+            <!--begin::Wrapper-->
+            <div class="mb-1">
+              <!--begin::Input wrapper-->
+              <div class="position-relative my-3">
+                <input
+                  class="form-control form-control-lg form-control-solid mt-4"
+                  autocomplete="new-password"
+                  placeholder="رمزعبور"
+                  dir="ltr"
+                  minlength="8"
+                  type="password"
+                  required=""
+                  name="new-password"
+                />
+
+                <!--begin::Visibility toggle-->
+                <span
+                  class="btn btn-sm btn-icon position-absolute translate-middle top-50 start-0 ms-10"
+                  data-kt-password-meter-control="visibility"
+                >
+                  <i class="bi bi-eye-slash fs-1"
+                    ><span class="path1"></span><span class="path2"></span
+                    ><span class="path3"></span><span class="path4"></span
+                  ></i>
+                  <i class="bi bi-eye d-none fs-1"
+                    ><span class="path1"></span><span class="path2"></span
+                    ><span class="path3"></span
+                  ></i>
+                </span>
+                <!--end::Visibility toggle-->
+              </div>
+              <!--end::Input wrapper-->
+            </div>
+            <!--end::Wrapper-->
+          </div>
+          <!--end::Main wrapper-->
+
+          <input
+            class="form-control form-control-lg form-control-solid mt-4"
+            autocomplete="off"
+            placeholder="تکرار رمزعبور"
+            dir="ltr"
+            minlength="8"
+            type="password"
+            required=""
+            name="confirm-password"
+          />
+        </div>
+        <!--begin::Alert-->
+        <div class="alert alert-primary d-flex align-items-center p-4">
+          <!--begin::Icon-->
+          <i class="ki-duotone ki-shield-tick fs-2hx text-success me-4"
+            ><span class="path1"></span><span class="path2"></span
+          ></i>
+          <!--end::Icon-->
+
+          <!--begin::Wrapper-->
+          <div class="d-flex flex-column">
+            <!--begin::Content-->
+            <span
+              >کلمه عبور باید حداقل ۸ کارکتر و ترکیبی از اعداد و حروف انگلیسی
+              باشد.</span
+            >
+            <!--end::Content-->
+          </div>
+          <!--end::Wrapper-->
+        </div>
+        <!--end::Alert-->
+        <!--begin::Submit-->
+        <div class="d-flex flex-center mt-2">
+          <button
+            class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+            type="button"
+            id="btn-submit-pass-reg"
+          >
+            <span>ثبت‌نام </span>
+          </button>
+        </div>
+        <!--end::Submit-->
+      </div>
+    </div>
+  </body>
+</html>
