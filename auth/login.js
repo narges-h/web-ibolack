@@ -46,7 +46,7 @@ function validateLoginForm(event) {
     }
 
     if (isValid) {
-       window.location.href = "../main.html";
+       window.location.href = "password.html";
     }
 
     return isValid;
