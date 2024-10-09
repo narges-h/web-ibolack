@@ -80,7 +80,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: rgba(199, 198, 198, 0.556);
+    background-color: #ffff;
     font-family: "IranSans";
 
 }
@@ -94,7 +94,7 @@ body {
     padding: 50px;
     border: 1px solid #e6ebee;
     border-radius: 30px;
-    margin-top: 20px;
+    margin-top: 8%;
 }
 
 #form-sign {
@@ -140,28 +140,10 @@ body {
     width: 470px;
 }
 
-
-
-
-#pass:hover {
-
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
-}
-
 #phoneNumbers:hover {
-
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
+    border: 1px solid rgb(245 245 245 / 83%);
+    background-color: rgb(245 245 245 / 83%);
 }
-
-#emailuser:hover {
-
-    border: 1px solid rgba(182, 214, 242, 0.827);
-    background-color: rgba(196, 223, 248, 0.988);
-
-}
-
 
 #google {
     border: 2px solid rgb(238, 238, 238);
@@ -184,13 +166,13 @@ body {
 }
 
 #sabtnam {
-    color: rgb(16, 76, 215);
+    color: #009ef7;
     text-decoration: none;
 }
 
 #open {
-    background-color: #286bb8;
-    border: 1px solid #286bb8;
+    background-color: #009ef7;
+    border: 1px solid #009ef7;
     border-radius: 10px;
     color: white;
     height: 55px;
@@ -202,7 +184,6 @@ body {
 
 #open:hover {
     cursor: pointer;
-    background-color: rgb(25, 60, 142);
 }
 
 img {
